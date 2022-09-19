@@ -66,7 +66,7 @@ function App() {
 
   }
 
-  const handleEdit = async (todo) => {
+  const handleEdit = async(todo) => {
     todo.done = !todo.done;
 
     const data = await fetch(API + "/todos/" + todo.id, {
@@ -79,7 +79,7 @@ function App() {
     });
 
     setTodos((prevState) =>
-      prevState.map((t) => (t.id === data.id ? (t = data) : <t></t>))
+      prevState.map((t) => (t.id === data.id ? (t = data) : t))
     );
   };
 
